@@ -1,4 +1,4 @@
-# todos_python
+# games_parser
 
 ## Installation
 Clone the repository, then in the terminal, being in the folder with the project, use command to install packages:
