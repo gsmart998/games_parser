@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, jsonify, make_response, request
 
 from utils.constants import STATIC_URL
@@ -9,7 +11,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def get_list():
-
     catalog_name = request.args.get('catalog_name')
     amount = request.args.get('amount')
 
@@ -35,4 +36,4 @@ def get_list():
 
 # main function
 if __name__ == '__main__':
-    app.run()
+    app.run(host=os.getenv("HOST"), port=os.getenv("PORT"))

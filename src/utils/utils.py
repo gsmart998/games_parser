@@ -51,10 +51,10 @@ def validate_params(catalog: str, amount: str) -> bool:
 
     errors = []
 
-    if catalog not in URLS_LIST:
+    if catalog is None or catalog not in URLS_LIST:
         errors.append("Catalog param is not valid")
 
-    if not amount.isdigit() or int(amount) <= 0:
+    if amount is None or not amount.isdigit() or int(amount) <= 0:
         errors.append("Amount param is not valid")
 
     return errors
